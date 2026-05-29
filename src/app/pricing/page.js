@@ -13,7 +13,7 @@ const PLANS = [
     desc: "Great for testing out a few styles on your pet",
     features: [
       "~83 Pet Portrait Generations",
-      "Collapsible Template Selector",
+      "Up to 5 Pet Photo Inputs",
       "High-Resolution HD Downloads",
       "Private Studio Gallery Store",
       "Standard Image Queue Speeds"
@@ -27,7 +27,7 @@ const PLANS = [
     desc: "Perfect for testing custom look combinations",
     features: [
       "~166 Pet Portrait Generations",
-      "Collapsible Template Selector",
+      "Up to 5 Pet Photo Inputs",
       "High-Resolution HD Downloads",
       "Private Studio Gallery Store",
       "Priority Rendering Queue"
@@ -43,7 +43,7 @@ const PLANS = [
     features: [
       "~333 Pet Portrait Generations",
       "Unlimited Creation History",
-      "Collapsible Template Selector",
+      "Up to 5 Pet Photo Inputs",
       "Priority Rendering Queue",
       "High-Resolution HD Downloads",
       "Premium Direct Email Support"
@@ -61,7 +61,7 @@ const PLANS = [
       "Instant Cloud Generation Speeds",
       "Priority 24/7 Dedicated Support",
       "Advanced Prompt Guidance Tuning",
-      "Collapsible Template Selector"
+      "Up to 5 Pet Photo Inputs"
     ]
   }
 ];
@@ -110,14 +110,14 @@ export default function PricingPage() {
         
         {/* Header Block */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-[10px] font-black uppercase tracking-wider text-rose-600 bg-rose-50 border border-rose-200 px-3.5 py-1.5 rounded-full shadow-sm">
+          <span className="text-[10px] font-black uppercase tracking-wider text-emerald-650 bg-emerald-50 border border-emerald-250 px-3.5 py-1.5 rounded-full shadow-sm">
             Credit Packages
           </span>
-          <h1 className="text-3xl font-black font-heading text-zinc-900 tracking-tight mt-4">
+          <h1 className="text-3xl font-black text-zinc-900 tracking-tight mt-4">
             Simple, One-Time Credit Purchases
           </h1>
-          <p className="text-sm text-zinc-550 mt-2 font-medium">
-            No monthly subscriptions, use them whenever you need. Each AI pet portrait generation costs <strong className="text-rose-600 font-bold">12 credits</strong>.
+          <p className="text-sm text-zinc-500 mt-2 font-medium">
+            No monthly subscriptions, use them whenever you need. Each AI pet portrait generation costs <strong className="text-emerald-600 font-bold">12 credits</strong>.
           </p>
         </div>
 
@@ -140,9 +140,10 @@ export default function PricingPage() {
           </div>
         )}
 
+        {/* Transaction Canceled Alert */}
         {canceled && (
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-8 text-center max-w-xl mx-auto shadow-md animate-in fade-in zoom-in duration-200">
-            <h3 className="text-sm font-bold text-amber-800 font-heading">Transaction Canceled</h3>
+          <div className="bg-amber-50 border border-amber-250 rounded-2xl p-4 mb-8 text-center max-w-xl mx-auto shadow-md animate-in fade-in zoom-in duration-200">
+            <h3 className="text-sm font-bold text-amber-800">Transaction Canceled</h3>
             <p className="text-xs text-amber-700 mt-1 font-medium">
               The Stripe checkout session was canceled. No charges were made to your account.
             </p>
@@ -156,39 +157,39 @@ export default function PricingPage() {
             return (
               <div
                 key={plan.id}
-                className={`bg-white border rounded-2xl overflow-hidden p-6 flex flex-col justify-between shadow-md transition-all hover:border-zinc-355 hover:scale-[1.01] relative ${
+                className={`bg-white border rounded-2xl overflow-hidden p-6 flex flex-col justify-between shadow-md transition-all hover:border-zinc-350 hover:scale-[1.01] relative ${
                   plan.popular
-                    ? "border-rose-500 ring-2 ring-rose-500/10 scale-[1.02] z-10"
+                    ? "border-emerald-500 ring-2 ring-emerald-500/10 scale-[1.02] z-10"
                     : "border-zinc-200"
                 }`}
               >
                 {/* Popular Badge */}
                 {plan.popular && (
-                  <span className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 border border-rose-200 px-2.5 py-0.5 rounded shadow">
+                  <span className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-wider text-emerald-650 bg-emerald-50 border border-emerald-250 px-2.5 py-0.5 rounded shadow">
                     Most Popular
                   </span>
                 )}
 
                 <div>
-                  <h3 className="text-sm font-black font-heading text-zinc-900 uppercase tracking-wider">{plan.name}</h3>
+                  <h3 className="text-sm font-black text-zinc-900 uppercase tracking-wider">{plan.name}</h3>
                   <p className="text-[11px] text-zinc-500 font-bold mt-1.5 leading-snug">{plan.desc}</p>
                   
-                  {/* Big price display */}
+                  {/* Price Display */}
                   <div className="flex items-baseline gap-1 my-5">
-                    <span className="text-3xl font-black text-zinc-900 font-heading">{plan.price}</span>
+                    <span className="text-3xl font-black text-zinc-900">{plan.price}</span>
                     <span className="text-xs text-zinc-450 font-bold">one-time</span>
                   </div>
 
-                  {/* Feature lists */}
+                  {/* Feature List */}
                   <ul className="space-y-2.5 text-xs text-zinc-700 mb-6 font-medium">
                     <li className="flex items-center gap-2 text-amber-850 font-bold bg-amber-50 border border-amber-200 px-2.5 py-1.5 rounded-lg mb-4">
-                      <FaCoins className="text-amber-605 text-xs animate-pulse" />
+                      <FaCoins className="text-amber-600 text-xs animate-pulse" />
                       <span>{plan.credits} Credits</span>
                     </li>
                     
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2 leading-relaxed">
-                        <FaCheck className="text-rose-500 text-[10px] flex-shrink-0 mt-1" />
+                        <FaCheck className="text-emerald-500 text-[10px] flex-shrink-0 mt-1" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -201,8 +202,8 @@ export default function PricingPage() {
                   disabled={isLoading}
                   className={`w-full py-3 rounded-xl text-xs font-black flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ${
                     plan.popular
-                      ? "bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white shadow-rose-500/10 hover:scale-[1.01]"
-                      : "bg-zinc-100 hover:bg-zinc-200 text-zinc-700"
+                      ? "bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-650 text-white shadow-emerald-500/10 hover:scale-[1.01]"
+                      : "bg-zinc-100 hover:bg-zinc-200 text-zinc-750"
                   }`}
                 >
                   {isLoading ? (

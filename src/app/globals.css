@@ -2,8 +2,7 @@
 
 @theme {
   --font-sans: var(--font-inter), sans-serif;
-  --font-outfit: var(--font-inter), sans-serif;
-  --font-heading: var(--font-outfit), sans-serif;
+  --font-heading: var(--font-inter), sans-serif;
 }
 
 @layer base {

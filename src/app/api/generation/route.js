@@ -19,10 +19,13 @@ export async function POST(req) {
     }
 
     const body = await req.json();
-    const { petImage, referenceImage, prompt, aspectRatio = "Auto", resolution = "1k" } = body;
+    const { petImages, prompt, aspectRatio = "Auto", resolution = "1k" } = body;
 
-    if (!petImage || !referenceImage) {
-      return new NextResponse("Both pet photo and style reference image are required", { status: 400 });
+    if (!petImages || !Array.isArray(petImages) || petImages.length === 0) {
+      return new NextResponse("At least one pet photo is required", { status: 400 });
+    }
+    if (petImages.length > 5) {
+      return new NextResponse("Maximum of 5 pet photos allowed", { status: 400 });
     }
 
     if (!prompt) {
@@ -52,7 +55,7 @@ export async function POST(req) {
           prompt,
           aspect_ratio: aspectRatio,
           resolution,
-          images_list: [petImage, referenceImage]
+          images_list: petImages
         };
 
         const submitRes = await fetch(submitUrl, {
@@ -132,8 +135,7 @@ export async function POST(req) {
     const creation = await prisma.petPortraitCreation.create({
       data: {
         userId: session.user.id,
-        petImage,
-        referenceImage,
+        petImages: JSON.stringify(petImages),
         resultImage,
         prompt,
         requestId,

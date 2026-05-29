@@ -8,20 +8,19 @@ datasource db {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String? @db.Text
-  access_token       String? @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String? @db.Text
-  session_state      String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -40,25 +39,24 @@ model User {
   email                String?               @unique
   emailVerified        DateTime?
   image                String?
-  credits              Int                   @default(10)
+  credits              Int                   @default(0)
   accounts             Account[]
   sessions             Session[]
   petPortraitCreations PetPortraitCreation[]
 }
 
 model PetPortraitCreation {
-  id             String   @id @default(cuid())
-  userId         String
-  petImage       String   @db.Text
-  referenceImage String   @db.Text
-  resultImage    String   @default("") @db.Text
-  prompt         String   @db.Text
-  requestId      String   @unique
-  status         String   @default("processing")
-  creditCost     Int      @default(12)
-  createTime     DateTime @default(now())
-  updateTime     DateTime @updatedAt
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id          String   @id @default(cuid())
+  userId      String
+  petImages   String   @default("[]") @db.Text
+  resultImage String   @default("") @db.Text
+  prompt      String   @db.Text
+  requestId   String   @unique
+  status      String   @default("processing")
+  creditCost  Int      @default(12)
+  createTime  DateTime @default(now())
+  updateTime  DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {

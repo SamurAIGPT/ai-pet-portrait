@@ -26,11 +26,11 @@ export function Navbar() {
       {/* Brand logo */}
       <div className="flex items-center gap-5 sm:gap-7 min-w-0">
         <Link href="/" className="flex items-center gap-2 font-extrabold tracking-tight text-zinc-900 flex-shrink-0 group">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-tr from-rose-500 to-orange-400 flex items-center justify-center text-white shadow-lg shadow-rose-500/20 group-hover:scale-105 transition-transform duration-200">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-200">
             <FaCamera className="text-sm" />
           </div>
           <span className="text-xl leading-none">
-            PetPortrait<span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-orange-500 font-black">AI</span>
+            PetPortrait<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 font-black">AI</span>
           </span>
         </Link>
 
@@ -45,13 +45,13 @@ export function Navbar() {
                 className={clsx(
                   "text-xs sm:text-sm font-semibold transition-colors py-1 relative",
                   isActive
-                    ? "text-rose-600"
+                    ? "text-emerald-600"
                     : "text-zinc-500 hover:text-zinc-900"
                 )}
               >
                 {link.name}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-600 to-teal-500 rounded-full" />
                 )}
               </Link>
             );
@@ -110,7 +110,7 @@ export function Navbar() {
           /* Sign in with Google */
           <button
             onClick={() => signIn("google")}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 active:scale-[0.98] rounded-lg shadow-lg shadow-rose-500/20 transition-all cursor-pointer"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 active:scale-[0.98] rounded-lg shadow-lg shadow-emerald-500/20 transition-all cursor-pointer"
           >
             <FaGoogle className="text-[10px]" />
             <span>Sign in</span>
@@ -129,7 +129,7 @@ export function Navbar() {
 
         <button
           onClick={toggleMenu}
-          className="p-1.5 text-zinc-500 hover:text-zinc-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500/50"
+          className="p-1.5 text-zinc-500 hover:text-zinc-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
           aria-label="Toggle menu"
         >
           {isOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
@@ -150,7 +150,7 @@ export function Navbar() {
                   className={clsx(
                     "px-3 py-2 text-sm font-semibold rounded-lg transition-colors",
                     isActive
-                      ? "text-rose-650 bg-rose-50 border-l-2 border-rose-500"
+                      ? "text-emerald-650 bg-emerald-50 border-l-2 border-emerald-500"
                       : "text-zinc-650 hover:text-zinc-900 hover:bg-zinc-50"
                   )}
                 >
@@ -197,7 +197,7 @@ export function Navbar() {
                   setIsOpen(false);
                   signIn("google");
                 }}
-                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-bold text-white bg-gradient-to-r from-rose-500 to-orange-500 rounded-lg shadow-lg"
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-500 rounded-lg shadow-lg shadow-emerald-500/10"
               >
                 <FaGoogle className="text-[10px]" />
                 <span>Sign in with Google</span>
