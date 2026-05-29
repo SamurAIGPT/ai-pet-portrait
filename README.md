@@ -11,7 +11,7 @@
 
 **GitHub Repository:** [github.com/SamurAIGPT/ai-pet-portrait](https://github.com/SamurAIGPT/ai-pet-portrait)
 
-**Live Demo Preview:** [ai-pet-portrait.vercel.app](https://ai-pet-portrait.vercel.app/)
+**Live Demo Preview:** [ai-pet-portrait-two.vercel.app](https://ai-pet-portrait-two.vercel.app/)
 
 ---
 
@@ -62,7 +62,7 @@ This architecture is engineered explicitly for **Vercel** serverless environment
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SamurAIGPT/ai-pet-portrait)
 
-**Live App:** [ai-pet-portrait.vercel.app](https://ai-pet-portrait.vercel.app/)
+**Live App:** [ai-pet-portrait-two.vercel.app](https://ai-pet-portrait-two.vercel.app/)
 
 ### 🔑 Required Environment Variables
 
