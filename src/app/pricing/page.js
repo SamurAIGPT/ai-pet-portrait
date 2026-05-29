@@ -110,10 +110,10 @@ export default function PricingPage() {
         
         {/* Header Block */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-[10px] font-black uppercase tracking-wider text-emerald-650 bg-emerald-50 border border-emerald-250 px-3.5 py-1.5 rounded-full shadow-sm">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-650 bg-emerald-50 border border-emerald-250 px-3.5 py-1.5 rounded-full shadow-sm">
             Credit Packages
           </span>
-          <h1 className="text-3xl font-black text-zinc-900 tracking-tight mt-4">
+          <h1 className="text-3xl font-bold text-zinc-900 tracking-tight mt-4">
             Simple, One-Time Credit Purchases
           </h1>
           <p className="text-sm text-zinc-500 mt-2 font-medium">
@@ -171,12 +171,12 @@ export default function PricingPage() {
                 )}
 
                 <div>
-                  <h3 className="text-sm font-black text-zinc-900 uppercase tracking-wider">{plan.name}</h3>
+                  <h3 className="text-sm font-bold text-zinc-900 uppercase tracking-wider">{plan.name}</h3>
                   <p className="text-[11px] text-zinc-500 font-bold mt-1.5 leading-snug">{plan.desc}</p>
                   
                   {/* Price Display */}
                   <div className="flex items-baseline gap-1 my-5">
-                    <span className="text-3xl font-black text-zinc-900">{plan.price}</span>
+                    <span className="text-3xl font-bold text-zinc-900">{plan.price}</span>
                     <span className="text-xs text-zinc-450 font-bold">one-time</span>
                   </div>
 
@@ -200,7 +200,7 @@ export default function PricingPage() {
                 <button
                   onClick={() => handlePurchase(plan.id)}
                   disabled={isLoading}
-                  className={`w-full py-3 rounded-xl text-xs font-black flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ${
+                  className={`w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md ${
                     plan.popular
                       ? "bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-650 text-white shadow-emerald-500/10 hover:scale-[1.01]"
                       : "bg-zinc-100 hover:bg-zinc-200 text-zinc-750"

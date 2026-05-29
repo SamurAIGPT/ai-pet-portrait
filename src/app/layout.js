@@ -4,8 +4,9 @@ import Providers from "../components/Providers";
 import { Navbar } from "../components/layout/Navbar";
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -16,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full w-full light" style={{ colorScheme: "light" }}>
-      <body className={`${inter.variable} h-full w-full flex flex-col antialiased bg-white text-zinc-900 font-sans overflow-hidden`}>
+      <body className={`${inter.variable} ${inter.className} h-full w-full flex flex-col antialiased bg-white text-zinc-900 overflow-hidden`}>
         <Providers>
           <Navbar />
           <div className="flex-1 flex flex-col overflow-hidden min-h-0">

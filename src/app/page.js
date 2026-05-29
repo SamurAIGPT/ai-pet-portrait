@@ -294,10 +294,7 @@ Low-detail rendering, blurry textures, exaggerated shadows, artificial effects, 
 
           {/* Heading */}
           <div className="mt-1">
-            <span className="text-[10px] font-black uppercase tracking-wider text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full w-fit">
-              Nano-Banana Engine
-            </span>
-            <h1 className="text-2xl font-black text-zinc-900 tracking-tight mt-2.5">
+            <h1 className="text-2xl font-bold text-zinc-900 tracking-tight mt-2.5">
               AI Pet Portrait Studio
             </h1>
             <p className="text-xs text-zinc-500 mt-1 font-medium leading-relaxed">
@@ -325,7 +322,7 @@ Low-detail rendering, blurry textures, exaggerated shadows, artificial effects, 
 
             {/* Thumbnail grid */}
 
-            <div className="grid grid-cols- sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {petImages.length > 0 &&
                 petImages.map((url, index) => (
                   <div
@@ -389,7 +386,7 @@ Low-detail rendering, blurry textures, exaggerated shadows, artificial effects, 
           {/* Editable Prompt */}
           <div className="bg-white border border-zinc-200 rounded p-5 shadow-md flex flex-col gap-4">
             <div>
-              <label className="text-[10px] font-black text-zinc-550 uppercase tracking-wider block mb-1.5">
+              <label className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block mb-1.5">
                 Art Direction Prompt
               </label>
               <textarea
@@ -504,7 +501,7 @@ Low-detail rendering, blurry textures, exaggerated shadows, artificial effects, 
             <div className="flex gap-3 mt-4 border-t border-zinc-100 pt-4 flex-shrink-0">
               <button
                 onClick={handleDownload}
-                className="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white rounded text-xs font-black shadow-lg shadow-emerald-500/10 cursor-pointer animate-in fade-in slide-in-from-bottom-2 duration-200"
+                className="flex-1 flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 text-white rounded text-xs font-semibold shadow-lg shadow-emerald-500/10 cursor-pointer animate-in fade-in slide-in-from-bottom-2 duration-200"
               >
                 <FaDownload />
                 <span>Download HD Portrait</span>

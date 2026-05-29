@@ -25,12 +25,12 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 py-3.5 bg-white/85 border-b border-zinc-200/80 backdrop-blur-md text-zinc-800 flex-shrink-0">
       {/* Brand logo */}
       <div className="flex items-center gap-5 sm:gap-7 min-w-0">
-        <Link href="/" className="flex items-center gap-2 font-extrabold tracking-tight text-zinc-900 flex-shrink-0 group">
+        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight text-zinc-900 flex-shrink-0 group">
           <div className="h-8 w-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-200">
             <FaCamera className="text-sm" />
           </div>
           <span className="text-xl leading-none">
-            PetPortrait<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 font-black">AI</span>
+            PetPortrait<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 font-bold">AI</span>
           </span>
         </Link>
 

@@ -91,7 +91,7 @@ export default function GalleryPage() {
           </p>
           <button
             onClick={() => signIn("google")}
-            className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-extrabold text-white bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-600 shadow-lg shadow-emerald-500/15 active:scale-[0.98] transition-all cursor-pointer"
+            className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-650 shadow-lg shadow-emerald-500/15 active:scale-[0.98] transition-all cursor-pointer"
           >
             <FaGoogle className="text-xs" />
             <span>Sign in with Google</span>
@@ -108,12 +108,12 @@ export default function GalleryPage() {
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
           <div>
-            <h1 className="text-2xl font-black text-zinc-900 tracking-tight">Showroom Gallery</h1>
+            <h1 className="text-2xl font-bold text-zinc-900 tracking-tight">Showroom Gallery</h1>
             <p className="text-xs sm:text-sm text-zinc-500 mt-1.5 font-medium">Browse your completed high-resolution AI pet portraits</p>
           </div>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-650 text-white text-xs font-extrabold rounded-lg shadow-lg shadow-emerald-500/5 transition-all w-fit cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+            className="inline-flex items-center justify-center gap-2 px-4.5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-655 text-white text-xs font-semibold rounded-lg shadow-lg shadow-emerald-500/5 transition-all w-fit cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
           >
             <FaPlus className="text-[10px]" /> Studio Workspace
           </Link>
@@ -131,7 +131,7 @@ export default function GalleryPage() {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-650 text-white text-sm font-extrabold rounded-lg shadow-lg shadow-emerald-500/10 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-700 hover:to-teal-655 text-white text-sm font-semibold rounded-lg shadow-lg shadow-emerald-500/10 cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
             >
               <FaPlus className="text-xs" /> Transform Pet Photo
             </Link>
@@ -260,7 +260,7 @@ export default function GalleryPage() {
                   {/* Input references */}
                   <div className="flex flex-col gap-4 flex-1 w-full max-w-[320px]">
                     <div className="bg-zinc-50 p-4 border border-zinc-200 rounded-xl space-y-3">
-                      <span className="text-[9px] font-black text-zinc-550 uppercase tracking-wider block">Uploaded Pet Photos</span>
+                      <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-wider block">Uploaded Pet Photos</span>
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         {modalImages.map((imgUrl, idx) => (
                           <div key={idx} className="aspect-square rounded-lg overflow-hidden border border-zinc-200 bg-zinc-100">
@@ -272,7 +272,7 @@ export default function GalleryPage() {
                     </div>
 
                     <div className="bg-zinc-50/50 p-4 border border-zinc-200 rounded-xl">
-                      <span className="text-[9px] font-black text-zinc-550 uppercase tracking-wider block mb-1.5">Prompt Applied</span>
+                      <span className="text-[9px] font-bold text-zinc-500 uppercase tracking-wider block mb-1.5">Prompt Applied</span>
                       <p className="text-[11px] text-zinc-650 leading-relaxed font-medium bg-white p-2.5 rounded border border-zinc-200 max-h-[120px] overflow-y-auto">
                         {selectedCreation.prompt}
                       </p>
