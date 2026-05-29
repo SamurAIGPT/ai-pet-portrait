@@ -1,9 +1,9 @@
-# 🐾 AI Pet Portrait Generator — Open-Source AI Pet Art Studio SaaS
+# 🐾 AI Pet Portrait Generator — Open-Source AI Pet Art Studio SaaS (Free Portrait My Pet / PetPainting Alternative)
 
-> **Transform your pet photos into stunning art masterpieces virtually in seconds.** A production-ready, self-hostable Next.js SaaS boilerplate built for pet lovers, custom portrait businesses, creators, and DTC apps. A free open-source alternative to paid custom pet portrait tools — powered by the MuAPI AI engine using the `nano-banana-2-edit` model.
+> **Transform pet photos into stunning oil paintings, royal portraits, cartoons, and art masterpieces in seconds.** A production-ready, self-hostable Next.js SaaS boilerplate built for pet lovers, custom portrait businesses, and DTC apps — replaces $30–$80 custom pet portrait services. A free open-source alternative to Portrait My Pet, PetPainting AI, and Paint Your Pet — powered by the MuAPI AI engine.
 
-**Tech stack:** Next.js 16 (App Router) · Prisma · PostgreSQL · NextAuth (Google OAuth) · Stripe · Tailwind CSS · MuAPI (nano-banana-2-edit) · Webhook-backed async delivery
-**Use cases:** Custom pet portrait shops · Pet lover gifts and print-on-demand planning · Digital pet art studios · DTC pet brand integrations
+**Tech stack:** Next.js 14 (App Router) · Prisma · PostgreSQL · NextAuth (Google OAuth) · Stripe · Tailwind CSS · MuAPI nano-banana-2-edit · Webhook-backed async delivery
+**Use cases:** Custom pet portrait shops · Print-on-demand pet gifts · Pet lover communities · Dog & cat art generators · Pet brand marketing · Etsy-style digital pet art · Animal shelter fundraisers · Pet influencer content
 
 ![AI Pet Portrait Generator Interface Screenshot](https://cdn.muapi.ai/data/2/546588467075/Screenshot_2026-05-29_122056.png)
 
