@@ -87,7 +87,7 @@ export default function StudioPage() {
     setIsUploading(true);
     setGeneratingError("");
 
-    const uploadedUrls = [...petImages];
+    const newUploadedUrls = [];
 
     try {
       for (const file of files) {
@@ -102,14 +102,17 @@ export default function StudioPage() {
         if (res.ok) {
           const data = await res.json();
           if (data.url) {
-            uploadedUrls.push(data.url);
+            newUploadedUrls.push(data.url);
           }
         } else {
           throw new Error("Upload failed");
         }
       }
 
-      setPetImages(uploadedUrls);
+      setPetImages(prev => {
+        const combined = [...prev, ...newUploadedUrls];
+        return combined.slice(0, 5);
+      });
       setResultImage("");
       setGeneratingStatus("idle");
     } catch (err) {
@@ -118,6 +121,11 @@ export default function StudioPage() {
       setGeneratingStatus("error");
     } finally {
       setIsUploading(false);
+      try {
+        e.target.value = "";
+      } catch (err) {
+        console.error("Failed to reset input value:", err);
+      }
     }
   };
 
