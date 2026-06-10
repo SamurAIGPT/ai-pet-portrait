@@ -7,6 +7,14 @@
 
 ![AI Pet Portrait Generator Interface Screenshot](https://cdn.muapi.ai/data/2/546588467075/Screenshot_2026-05-29_122056.png)
 
+<p align="center">
+  <a href="https://github.com/Anil-matcha/awesome-generative-ai-apps">
+    <img src="https://img.shields.io/badge/Part%20of-Awesome%20Generative%20AI%20Apps-FFD700?style=for-the-badge&logo=github&logoColor=black" alt="Awesome Generative AI Apps">
+  </a>
+</p>
+
+> 🎨 **[Explore 50+ more open-source AI apps →](https://github.com/Anil-matcha/awesome-generative-ai-apps)**
+
 ## 🌐 Project Details
 
 **GitHub Repository:** [github.com/SamurAIGPT/ai-pet-portrait](https://github.com/SamurAIGPT/ai-pet-portrait)
