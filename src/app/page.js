@@ -204,12 +204,9 @@ Low-detail rendering, blurry textures, exaggerated shadows, artificial effects, 
 
   const pollResult = async (id) => {
     let completed = false;
-    let attempts = 0;
-    const maxAttempts = 20;
 
-    while (!completed && attempts < maxAttempts) {
+    while (!completed) {
       await new Promise((resolve) => setTimeout(resolve, 2500));
-      attempts++;
 
       try {
         const res = await fetch(`/api/creations?id=${id}`);
@@ -231,13 +228,6 @@ Low-detail rendering, blurry textures, exaggerated shadows, artificial effects, 
       } catch (err) {
         console.error("Error polling database status:", err);
       }
-    }
-
-    if (!completed) {
-      setGeneratingError(
-        "AI processing is taking longer than expected. We will save it in your creations once finished.",
-      );
-      setGeneratingStatus("idle");
     }
   };
 
