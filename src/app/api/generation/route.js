@@ -32,16 +32,23 @@ export async function POST(req) {
       return new NextResponse("Prompt is required", { status: 400 });
     }
 
-    // 1. Deduct credits (12 credits)
-    const cost = config.ai.generationCost || 12;
-    try {
-      await UserService.deductCredits(session.user.id, cost);
-    } catch (err) {
-      return new NextResponse("Insufficient credits", { status: 402 });
+    const headerApiKey = req.headers.get("x-custom-api-key");
+    const customApiKey = headerApiKey || body.customApiKey || session.user.customApiKey || null;
+    const isUsingCustomKey = Boolean(customApiKey && customApiKey.trim().length > 0);
+
+    // Cost logic: 12 credits (0 if custom API key active)
+    const cost = isUsingCustomKey ? 0 : (config.ai.generationCost || 12);
+
+    if (!isUsingCustomKey && cost > 0) {
+      try {
+        await UserService.deductCredits(session.user.id, cost);
+      } catch (err) {
+        return new NextResponse("Insufficient credits", { status: 402 });
+      }
     }
 
-    // 2. Submit prediction to MuAPI
-    const apiKey = config.ai.apiKey;
+    // Submit prediction to MuAPI
+    const apiKey = isUsingCustomKey ? customApiKey.trim() : config.ai.apiKey;
     let resultImage = "";
     let requestId = `mock_${Date.now()}`;
     let status = "processing";
@@ -125,13 +132,12 @@ export async function POST(req) {
       }
     } else {
       // Mock mode
-      // Wait 3 seconds to simulate AI delay
       await new Promise(resolve => setTimeout(resolve, 3000));
       resultImage = FALLBACK_PORTRAITS[Math.floor(Math.random() * FALLBACK_PORTRAITS.length)];
       status = "completed";
     }
 
-    // 3. Save DB record
+    // Save DB record
     const creation = await prisma.petPortraitCreation.create({
       data: {
         userId: session.user.id,
