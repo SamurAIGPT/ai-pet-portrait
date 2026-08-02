@@ -17,6 +17,11 @@
 
 https://github.com/user-attachments/assets/c366dedb-986f-4826-82b3-42c0257d00f6
 
+## Related Projects
+
+- [MuAPI image playground](https://muapi.ai/playground) — Try image-generation and editing models for pet portraits.
+- [MuAPI access keys](https://muapi.ai/access-keys) — Create the API key used by this app.
+
 ## 🌐 Project Details
 
 **GitHub Repository:** [github.com/SamurAIGPT/ai-pet-portrait](https://github.com/SamurAIGPT/ai-pet-portrait)
